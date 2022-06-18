@@ -54,7 +54,8 @@ public class Odeza_StepDefinitions {
 
 
         WebElement apptAutoFill = Driver.getDriver().findElement(By.xpath("//*[@id=\"menu-odeza-main-nav-2\"]/li[2]/ul/li[5]/a"));
-        apptAutoFill.click();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait.until(ExpectedConditions.elementToBeClickable(apptAutoFill)).click();
 
         System.out.println("Navigation to an Appointment Autofill is done");
 
