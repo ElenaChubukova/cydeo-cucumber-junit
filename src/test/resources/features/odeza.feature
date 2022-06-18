@@ -3,8 +3,8 @@ Feature: Odeza app features verify
 
   User Story: As a user, when I'm on Odeza page
               I should be able to do different manipulations and see relevant information
-Background:
-  Given user is on Odeza homepage
+#Background:
+ # Given user is on Odeza homepage
 
   Scenario: Odeza url verification
     Then user sees Odeza in the url

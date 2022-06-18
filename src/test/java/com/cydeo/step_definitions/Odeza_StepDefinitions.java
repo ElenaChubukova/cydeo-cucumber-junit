@@ -13,6 +13,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.BrokenBarrierException;
+
 public class Odeza_StepDefinitions {
 
     OdezaBasePage odezaBasePage = new OdezaBasePage();
@@ -41,9 +43,9 @@ public class Odeza_StepDefinitions {
     public void user_navigates_to_the_solutions_menu() {
 
 
-        WebElement solutionTab = Driver.getDriver().findElement(By.xpath("//*[@id=\"menu-odeza-main-nav-2\"]/li[2]/a"));
-       BrowserUtils.hover(solutionTab);
-
+        WebElement solutionTab = Driver.getDriver().findElement(By.xpath("//a[text()='SOLUTIONS']"));
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(solutionTab).perform();
 
     }
 
@@ -52,7 +54,7 @@ public class Odeza_StepDefinitions {
 
 
         WebElement apptAutoFill = Driver.getDriver().findElement(By.xpath("//*[@id=\"menu-odeza-main-nav-2\"]/li[2]/ul/li[5]/a"));
-       BrowserUtils.waitForVisibility(apptAutoFill, 10);
+        apptAutoFill.click();
 
         System.out.println("Navigation to an Appointment Autofill is done");
 
